@@ -1,0 +1,187 @@
+package compDepartures;
+
+import java.awt.EventQueue;
+import java.awt.*;
+import java.io.IOException;
+
+import javax.swing.JFrame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class App {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws IOException {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					App window = new App();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+	}
+
+	
+
+	/**
+	 * Create the application.
+	 */
+	public App() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1280, 700);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLayeredPane layeredPane = new JLayeredPane();
+		
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		JLabel AMS = new JLabel("AMS");
+		AMS.setBounds(454, 170, 32, 23);
+		layeredPane.add(AMS);
+		
+		JLabel map = new JLabel("");
+		map.setLabelFor(map);
+		Image img = new ImageIcon(this.getClass().getResource("/map.png")).getImage();
+		
+		JLabel BCL = new JLabel("BCL");
+		BCL.setBounds(419, 170, 30, 23);
+		layeredPane.add(BCL);
+		
+		JLabel DUB = new JLabel("DUB");
+		DUB.setBounds(392, 170, 24, 23);
+		layeredPane.add(DUB);
+		
+		JLabel ATH = new JLabel("ATH");
+		ATH.setBounds(493, 219, 28, 23);
+		layeredPane.add(ATH);
+		
+		JLabel BKK = new JLabel("BKK");
+		BKK.setBounds(733, 302, 29, 23);
+		layeredPane.add(BKK);
+		
+		JLabel CAIRO = new JLabel("CAI");
+		CAIRO.setBounds(519, 248, 25, 23);
+		layeredPane.add(CAIRO);
+		
+		JLabel DEL = new JLabel("DEL");
+		DEL.setBounds(656, 253, 28, 23);
+		layeredPane.add(DEL);
+		
+		JLabel DXB = new JLabel("DXB");
+		DXB.setBounds(587, 264, 29, 23);
+		layeredPane.add(DXB);
+		
+		JLabel HKG = new JLabel("HKG");
+		HKG.setBounds(773, 267, 29, 23);
+		layeredPane.add(HKG);
+		
+		JLabel JNB = new JLabel("JNB");
+		JNB.setBounds(508, 438, 29, 23);
+		layeredPane.add(JNB);
+		
+		JLabel LOS = new JLabel("LOS");
+		LOS.setBounds(436, 321, 29, 23);
+		layeredPane.add(LOS);
+		
+		JLabel LVS = new JLabel("LVS");
+		LVS.setBounds(91, 227, 27, 23);
+		layeredPane.add(LVS);
+		
+		JLabel LIS = new JLabel("LIS");
+		LIS.setBounds(390, 212, 26, 23);
+		layeredPane.add(LIS);
+		
+		JLabel MAD = new JLabel("MAD");
+		MAD.setBounds(415, 213, 31, 23);
+		layeredPane.add(MAD);
+		
+		JLabel RAK = new JLabel("RAK");
+		RAK.setBounds(399, 235, 30, 23);
+		layeredPane.add(RAK);
+		
+		JLabel MEX = new JLabel("MEX");
+		MEX.setBounds(113, 276, 30, 23);
+		layeredPane.add(MEX);
+		
+		JLabel SVO = new JLabel("SVO");
+		SVO.setBounds(518, 149, 31, 23);
+		layeredPane.add(SVO);
+		
+		JLabel JFK = new JLabel("JFK");
+		JFK.setBounds(220, 203, 29, 23);
+		layeredPane.add(JFK);
+		
+		JLabel CDG = new JLabel("CDG");
+		CDG.setBounds(436, 190, 26, 23);
+		layeredPane.add(CDG);
+		
+		JLabel FCO = new JLabel("FCO");
+		FCO.setBounds(462, 204, 29, 23);
+		layeredPane.add(FCO);
+		
+		JLabel GRU = new JLabel("GRU");
+		GRU.setBounds(275, 428, 30, 23);
+		layeredPane.add(GRU);
+		
+		JLabel ARN = new JLabel("ARN");
+		ARN.setBounds(469, 147, 30, 23);
+		layeredPane.add(ARN);
+		
+		JLabel SYD = new JLabel("SYD");
+		SYD.setBounds(875, 459, 30, 23);
+		layeredPane.add(SYD);
+		
+		JLabel DFW = new JLabel("DFW");
+		DFW.setBounds(131, 243, 32, 23);
+		layeredPane.add(DFW);
+		
+		JLabel HND = new JLabel("HND");
+		HND.setBounds(829, 219, 31, 23);
+		layeredPane.add(HND);
+		
+		JLabel YYZ = new JLabel("YYZ");
+		YYZ.setBounds(194, 194, 26, 23);
+		layeredPane.add(YYZ);
+		map.setIcon(new ImageIcon(img));
+		map.setBounds(10, 11, 944, 617);
+		layeredPane.add(map);
+		
+		
+		frame.getContentPane().setLayout(groupLayout);
+	}
+}
