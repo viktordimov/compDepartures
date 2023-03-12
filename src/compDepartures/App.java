@@ -3,6 +3,9 @@ package compDepartures;
 import java.awt.EventQueue;
 import java.awt.*;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Timer;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -11,12 +14,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class App {
 
-	private JFrame frame;
+	private JDialog frame;
 
 	/**
 	 * Launch the application.
@@ -49,9 +54,9 @@ public class App {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
+		frame = new JDialog();
 		frame.setBounds(100, 100, 1280, 700);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		
@@ -70,13 +75,16 @@ public class App {
 					.addComponent(layeredPane, GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
 					.addContainerGap())
 		);
-		JLabel AMS = new JLabel("AMS");
-		AMS.setBounds(454, 170, 32, 23);
-		layeredPane.add(AMS);
+		
+		
 		
 		JLabel map = new JLabel("");
 		map.setLabelFor(map);
 		Image img = new ImageIcon(this.getClass().getResource("/map.png")).getImage();
+		
+		JLabel AMS = new JLabel("AMS");
+		AMS.setBounds(454, 170, 32, 23);
+		layeredPane.add(AMS);
 		
 		JLabel BCL = new JLabel("BCL");
 		BCL.setBounds(419, 170, 30, 23);
@@ -181,7 +189,11 @@ public class App {
 		map.setBounds(10, 11, 944, 617);
 		layeredPane.add(map);
 		
+		JLabel timeNow = new JLabel("Implement Real time Date and Time here");
+		timeNow.setBounds(10, 0, 270, 14);
+		layeredPane.add(timeNow);
 		
 		frame.getContentPane().setLayout(groupLayout);
 	}
+	
 }
