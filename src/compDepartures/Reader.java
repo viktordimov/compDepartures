@@ -3,261 +3,94 @@ package compDepartures;
 import java.util.*;
 import java.io.*;
 //949000
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 // For some reason calling this class makes the program really slow. 
 // Write everything to App.java until learn how to avoid the bottleneck
 
-public class Reader {
+public class Reader extends App {
 	
 //		Testing as main for console readings
 //		public static void main(String[] args) throws FileNotFoundException {
 //		public static void main(String[] args) throws IOException {
 	
-		public ArrayList<String[]> data() throws IOException {
+		public static void main(String[] args) throws IOException {
 		
-		ArrayList<String[]> data = new ArrayList<String[]>();
-		
-//		Slow method
-//		File csv = new File("Flights.csv");
-//		
-//		@SuppressWarnings("resource")
-//		Scanner reader = new Scanner(csv);
-//		
-
-//		while (reader.hasNextLine()) {
-//			
-//			String row = reader.nextLine();
-//			String col[] = row.split(",");
-//			data.add(col);
-//			
-//		}
-
-//		Unbelievably faster. 
-		 
-		BufferedReader reader = new BufferedReader(new FileReader("Flights.csv"));
-		String line = "";
-		
-		while ((line = reader.readLine()) != null) {
+			ArrayList<String[]> data = new ArrayList<String[]>();
+			 
+			 
+			BufferedReader reader = new BufferedReader(new FileReader("Flights.csv"));
+			String line = "";
 			
-			String col[] = line.split(",");
-			data.add(col);
-							
+			while ((line = reader.readLine()) != null) {
+				
+				String col[] = line.split(",");
+				data.add(col);
+								
+			}
+			reader.close();
+			
+			LocalDate ld = LocalDate.now();
+			LocalTime lt = LocalTime.now();
+
+			DateTimeFormatter d = DateTimeFormatter.ofPattern("dd/MM/uuuu");
+			DateTimeFormatter t = DateTimeFormatter.ofPattern("HH:mm");
+			DateTimeFormatter del = DateTimeFormatter.ofPattern("mm");
+			
+
+			String[] date = new String[data.size()];
+			String[] depTime = new String[data.size()];
+			String[] arrTime = new String[data.size()];
+			String[] duration = new String[data.size()]; //In decimal hours 1 = 100
+			String[] miles = new String[data.size()];
+			String[] delay = new String[data.size()]; //In minutes
+			String[] dAp = new String[data.size()];
+			String[] dCt = new String[data.size()];
+			String[] aAp = new String[data.size()];
+			String[] aCt = new String[data.size()];
+			String[] flightNo = new String[data.size()];
+			String[] airline = new String[data.size()];
+			
+			for (int i = 0; i < data.size() ; i++) {
+
+				date[i] = data.get(i)[0];
+				depTime[i] = data.get(i)[1];
+				arrTime[i] = data.get(i)[2];
+				duration[i] = data.get(i)[3];
+				miles[i] = data.get(i)[4];
+				delay[i] = data.get(i)[5];
+				dAp[i] = data.get(i)[6];
+				dCt[i] = data.get(i)[7];
+				aAp[i] = data.get(i)[8];
+				aCt[i] = data.get(i)[9];
+				flightNo[i] = data.get(i)[10];
+				airline[i] = data.get(i)[11];
+			}
+			
+			System.out.println("Delayed flights");
+				
+			for (int i = 0; i < data.size(); i++) {
+				
+				LocalDate pDate = LocalDate.parse(date[i], d);
+				
+				if (!ld.isEqual(pDate)) {
+					continue;
+				} 
+				
+				if (dAp[i].contains("BCL")) {
+					
+					long x = Long.valueOf(delay[i]);
+					
+					LocalTime dTime = LocalTime.parse(depTime[i].toString(), t);
+					LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
+					
+					if (aTime.plusMinutes(x).isAfter(aTime.plusMinutes(30))) {
+					
+					String displayDelayed = (dTime+" "+dAp[i]+" "+aAp[i]+" "+aTime+" Delay "+aTime.plusMinutes(x));
+					}
+				}	
+			}
 		}
-
-
-		reader.close();
-		return data;
-	}
-		
-//		Encapsulating each column into its own function
-//		
-//		public  String[] date() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] date = new String[all.size()];
-//			
-//			for (int i = 0; i < all.size(); i++) {
-//				
-//				date[i] = all.get(i)[0]; 		
-//				
-//			}
-//			
-//			// Date needs to be parsed since the format is dd/mm/yyy
-//			// https://www.baeldung.com/java-string-to-date
-//			
-//			return date;
-//		}
-//		
-//		public  String[] depTime() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] depTime = new String[all.size()];
-//			
-//			for (int i = 0; i < all.size(); i++) {
-//				
-//				depTime[i] = all.get(i)[1];
-//				
-//			}
-//			
-//			return depTime;
-//		}
-//		
-//		public  String[] arrTime() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] arrTime= new String[all.size()];
-//
-//			for (int i = 0; i < all.size(); i++) {
-//
-//				arrTime[i] = all.get(i)[2];
-//
-//			}
-//			
-//			return arrTime;
-//		}
-//		
-//		public  String[] duration() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] duration = new String[all.size()];
-//
-//			for (int i = 0; i < all.size(); i++) {
-//
-//				duration[i] = all.get(i)[3];
-//
-//			}
-//			
-//			return duration;
-//		}
-//		
-//		public  String[] miles() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] miles = new String[all.size()];
-//			
-//			for (int i = 0; i < all.size(); i++) {
-//				
-//				miles[i] = all.get(i)[4];
-//				
-//			}
-//			
-//			return miles;
-//		}
-//		
-//		public  String[] delay() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] delay = new String[all.size()];
-//			
-//			for (int i = 0; i < all.size(); i++) {
-//				
-//				delay[i] = all.get(i)[5];
-//				
-//			}
-//			
-//			return delay;
-//		}
-//		
-//		public  String[] depAirport() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] depAirport = new String[all.size()];
-//
-//			for (int i = 0; i < all.size(); i++) {
-//
-//				depAirport[i] = all.get(i)[6];
-//				
-//			}
-//			
-//			return depAirport;
-//		}
-//		
-//		public  String[] depCity() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] depCity = new String[all.size()];
-//
-//			for (int i = 0; i < all.size(); i++) {
-//				
-//				depCity[i] = all.get(i)[7];
-//				
-//			}
-//			
-//			return depCity;
-//		}
-//		
-//		public  String[] arrAirport() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//			
-//			String[] arrAirport = new String[all.size()];
-//			
-//			for (int i = 0; i < all.size(); i++) {
-//
-//				arrAirport[i] = all.get(i)[8];
-//				
-//			}
-//			
-//			return arrAirport;
-//		}
-//		
-//		public  String[] arrCity() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//
-//			String[] arrCity = new String[all.size()];
-//
-//			for (int i = 0; i < all.size(); i++) {
-//
-//				arrCity[i] = all.get(i)[9];
-//				
-//			}
-//			
-//			return arrCity;
-//		}
-//		
-//		public  String[] flightNo() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//
-//			String[] flightNo = new String[all.size()];
-//			
-//			for (int i = 0; i < all.size(); i++) {
-//				
-//				flightNo[i] = all.get(i)[10];
-//				
-//			}
-//			
-//			return flightNo;
-//		}
-//
-//		public  String[] airline() throws IOException {
-//			
-//			Reader alls = new Reader();
-//			
-//			ArrayList<String[]> all = alls.data();
-//
-//			String[] airline = new String[all.size()];
-//			
-//			for (int i = 0; i < all.size(); i++) {
-//
-//				airline[i] = all.get(i)[11];
-//				
-//			}
-//			
-//			return airline;
-//		}
-}	
-		
-		
-
+}

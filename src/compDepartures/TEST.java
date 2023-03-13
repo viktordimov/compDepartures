@@ -70,6 +70,26 @@ ArrayList<String[]> data = new ArrayList<String[]>();
 			
 		}
 		
+for (int i = 0; i < data.size(); i++) {
+			
+			LocalDate pDate = LocalDate.parse(date[i], d);
+			
+			if (!ld.isEqual(pDate)) {
+				continue;
+			} 
+			
+			if (dAp[i].contains("BCL")) {
+				
+				LocalTime dTime = LocalTime.parse(depTime[i].toString(), t);
+				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
+				
+				System.out.println(dCt[i]+"("+dAp[i]+") to "+aCt[i]+"("+aAp[i]+") -- "+dTime+" to "+aTime);		
+			}
+		
+//		
+				
+		}
+		
 	}
 
 }

@@ -44,21 +44,28 @@ public class App {
 				}
 			}
 		});
+	}
+
+	
+
+	/**
+	 * Create the application.
+	 * @throws IOException 
+	 */
+	public App() throws IOException {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 * @throws IOException 
+	 */
+	private void initialize() throws IOException {
+		frame = new JDialog();
+		frame.setBounds(100, 100, 1280, 700);
+		frame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		
-		//String date = data.get(i)[0]
-		//String depTime = data.get(i)[1]
-		//String arrTime = data.get(i)[2]
-		//String duration = data.get(i)[3]
-		//String miles = data.get(i)[4]
-		//String delay = data.get(i)[5]
-		//String depAir = data.get(i)[6]
-		//String depCt = data.get(i)[7]
-		//String arrAir = data.get(i)[8]
-		//String arrCt = data.get(i)[9]
-		//String flightNo = data.get(i)[10]
-		//String airline = data.get(i)[11]
-		
-ArrayList<String[]> data = new ArrayList<String[]>();
+		ArrayList<String[]> data = new ArrayList<String[]>();
 		 
 		 
 		BufferedReader reader = new BufferedReader(new FileReader("Flights.csv"));
@@ -77,55 +84,63 @@ ArrayList<String[]> data = new ArrayList<String[]>();
 
 		DateTimeFormatter d = DateTimeFormatter.ofPattern("dd/MM/uuuu");
 		DateTimeFormatter t = DateTimeFormatter.ofPattern("HH:mm");
-		
-		System.out.println("Flights for today");
+		DateTimeFormatter del = DateTimeFormatter.ofPattern("mm");
 		
 
+		String[] date = new String[data.size()];
+		String[] depTime = new String[data.size()];
+		String[] arrTime = new String[data.size()];
+		String[] duration = new String[data.size()]; //In decimal hours 1 = 100
+		String[] miles = new String[data.size()];
+		String[] delay = new String[data.size()]; //In minutes
+		String[] dAp = new String[data.size()];
+		String[] dCt = new String[data.size()];
+		String[] aAp = new String[data.size()];
+		String[] aCt = new String[data.size()];
+		String[] flightNo = new String[data.size()];
+		String[] airline = new String[data.size()];
+		
 		for (int i = 0; i < data.size() ; i++) {
-			
-			String dCt = data.get(i)[7];
-			String aCt = data.get(i)[9];
-			String dAp = data.get(i)[6];
-			String aAp = data.get(i)[8];
-			
-			LocalDate date = LocalDate.parse(data.get(i)[0], d);
-			
-			if (ld.isEqual(date)) {
-				
-				boolean check = ld.isEqual(date);
-				System.out.println(check);
-				
-				LocalTime dTime = LocalTime.parse(data.get(i)[1], t);
-				LocalTime aTime = LocalTime.parse(data.get(i)[2], t);
-				
-				System.out.println(dCt+"("+dAp+") to "+aCt+"("+aAp+") -- "+dTime+" to "+aTime);
-			}
-			
+
+			date[i] = data.get(i)[0];
+			depTime[i] = data.get(i)[1];
+			arrTime[i] = data.get(i)[2];
+			duration[i] = data.get(i)[3];
+			miles[i] = data.get(i)[4];
+			delay[i] = data.get(i)[5];
+			dAp[i] = data.get(i)[6];
+			dCt[i] = data.get(i)[7];
+			aAp[i] = data.get(i)[8];
+			aCt[i] = data.get(i)[9];
+			flightNo[i] = data.get(i)[10];
+			airline[i] = data.get(i)[11];
 		}
 		
-	}
+		System.out.println("Delayed flights");
+			
+		for (int i = 0; i < data.size(); i++) {
+			
+			LocalDate pDate = LocalDate.parse(date[i], d);
+			
+			if (!ld.isEqual(pDate)) {
+				continue;
+			} 
+			
+			if (dAp[i].contains("BCL")) {
+				
+				long x = Long.valueOf(delay[i]);
+				
+				LocalTime dTime = LocalTime.parse(depTime[i].toString(), t);
+				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
+				
+				if (aTime.plusMinutes(x).isAfter(aTime.plusMinutes(30))) {
+				
+				String displayDelayed = (dTime+" "+dAp[i]+" "+aAp[i]+" "+aTime+" Delay "+aTime.plusMinutes(x));
+				}
+			}	
+		}
 
-		
-
-	
-
-	/**
-	 * Create the application.
-	 */
-	public App() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JDialog();
-		frame.setBounds(100, 100, 1280, 700);
-		frame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		
 		JLayeredPane layeredPane = new JLayeredPane();
-		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
