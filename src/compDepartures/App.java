@@ -56,7 +56,7 @@ public class App {
 	 */
 	private void initialize() throws IOException {
 		frame = new JDialog();
-		frame.setBounds(100, 100, 1368, 700);
+		frame.setBounds(100, 100, 1368, 1121);
 		frame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 //		-----------------------------------------------------------------------------------------------------------------------------------
 		// Create ArrayList to store all the CSV data
@@ -195,157 +195,161 @@ public class App {
 				
 			}
 		});
-		BCL.setBounds(419, 170, 30, 23);
-		layeredPane.add(BCL);
-		
-		JLabel AMS = new JLabel("AMS");
-		AMS.setFont(new Font("Tahoma", Font.BOLD, 11));
-		AMS.setBounds(454, 170, 32, 23);
-		layeredPane.add(AMS);
-		
-		
-		JLabel DUB = new JLabel("DUB");
-		DUB.setFont(new Font("Tahoma", Font.BOLD, 11));
-		DUB.setBounds(392, 170, 24, 23);
-		layeredPane.add(DUB);
-		
-		JLabel ATH = new JLabel("ATH");
-		ATH.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ATH.setBounds(493, 219, 28, 23);
-		layeredPane.add(ATH);
-		
-		JLabel BKK = new JLabel("BKK");
-		BKK.setFont(new Font("Tahoma", Font.BOLD, 11));
-		BKK.setBounds(733, 302, 29, 23);
-		layeredPane.add(BKK);
-		
-		JLabel CAIRO = new JLabel("CAI");
-		CAIRO.setFont(new Font("Tahoma", Font.BOLD, 11));
-		CAIRO.setBounds(519, 248, 25, 23);
-		layeredPane.add(CAIRO);
-		
-		JLabel DEL = new JLabel("DEL");
-		DEL.setFont(new Font("Tahoma", Font.BOLD, 11));
-		DEL.setBounds(656, 253, 28, 23);
-		layeredPane.add(DEL);
-		
-		JLabel DXB = new JLabel("DXB");
-		DXB.setFont(new Font("Tahoma", Font.BOLD, 11));
-		DXB.setBounds(587, 264, 29, 23);
-		layeredPane.add(DXB);
-		
-		JLabel HKG = new JLabel("HKG");
-		HKG.setFont(new Font("Tahoma", Font.BOLD, 11));
-		HKG.setBounds(773, 267, 29, 23);
-		layeredPane.add(HKG);
-		
-		JLabel JNB = new JLabel("JNB");
-		JNB.setFont(new Font("Tahoma", Font.BOLD, 11));
-		JNB.setBounds(508, 438, 29, 23);
-		layeredPane.add(JNB);
-		
-		JLabel LOS = new JLabel("LOS");
-		LOS.setFont(new Font("Tahoma", Font.BOLD, 11));
-		LOS.setBounds(436, 321, 29, 23);
-		layeredPane.add(LOS);
-		
-		JLabel LVS = new JLabel("LVS");
-		LVS.setFont(new Font("Tahoma", Font.BOLD, 11));
-		LVS.setBounds(91, 227, 27, 23);
-		layeredPane.add(LVS);
-		
-		JLabel LIS = new JLabel("LIS");
-		LIS.setFont(new Font("Tahoma", Font.BOLD, 11));
-		LIS.setBounds(390, 212, 26, 23);
-		layeredPane.add(LIS);
-		
-		JLabel MAD = new JLabel("MAD");
-		MAD.setFont(new Font("Tahoma", Font.BOLD, 11));
-		MAD.setBounds(415, 213, 31, 23);
-		layeredPane.add(MAD);
-		
-		JLabel RAK = new JLabel("RAK");
-		RAK.setFont(new Font("Tahoma", Font.BOLD, 11));
-		RAK.setBounds(399, 235, 30, 23);
-		layeredPane.add(RAK);
-		
-		JLabel MEX = new JLabel("MEX");
-		MEX.setFont(new Font("Tahoma", Font.BOLD, 11));
-		MEX.setBounds(113, 276, 30, 23);
-		layeredPane.add(MEX);
-		
-		JLabel SVO = new JLabel("SVO");
-		SVO.setFont(new Font("Tahoma", Font.BOLD, 11));
-		SVO.setBounds(518, 149, 31, 23);
-		layeredPane.add(SVO);
-		
-		JLabel JFK = new JLabel("JFK");
-		JFK.setFont(new Font("Tahoma", Font.BOLD, 11));
-		JFK.setBounds(220, 203, 29, 23);
-		layeredPane.add(JFK);
-		
-		JLabel CDG = new JLabel("CDG");
-		CDG.setFont(new Font("Tahoma", Font.BOLD, 11));
-		CDG.setBounds(436, 190, 26, 23);
-		layeredPane.add(CDG);
-		
-		JLabel FCO = new JLabel("FCO");
-		FCO.setFont(new Font("Tahoma", Font.BOLD, 11));
-		FCO.setBounds(462, 204, 29, 23);
-		layeredPane.add(FCO);
-		
-		JLabel GRU = new JLabel("GRU");
-		GRU.setFont(new Font("Tahoma", Font.BOLD, 11));
-		GRU.setBounds(275, 428, 30, 23);
-		layeredPane.add(GRU);
-		
-		JLabel ARN = new JLabel("ARN");
-		ARN.setFont(new Font("Tahoma", Font.BOLD, 11));
-		ARN.setBounds(469, 147, 30, 23);
-		layeredPane.add(ARN);
-		
-		JLabel SYD = new JLabel("SYD");
-		SYD.setFont(new Font("Tahoma", Font.BOLD, 11));
-		SYD.setBounds(875, 459, 30, 23);
-		layeredPane.add(SYD);
-		
-		JLabel DFW = new JLabel("DFW");
-		DFW.setFont(new Font("Tahoma", Font.BOLD, 11));
-		DFW.setBounds(131, 243, 32, 23);
-		layeredPane.add(DFW);
-		
-		JLabel HND = new JLabel("HND");
-		HND.setFont(new Font("Tahoma", Font.BOLD, 11));
-		HND.setBounds(829, 219, 31, 23);
-		layeredPane.add(HND);
-		
-		JLabel YYZ = new JLabel("YYZ");
-		YYZ.setFont(new Font("Tahoma", Font.BOLD, 11));
-		YYZ.setBounds(194, 194, 26, 23);
-		layeredPane.add(YYZ);
-		map.setIcon(new ImageIcon(img));
-		map.setBounds(10, 11, 944, 617);
-		layeredPane.add(map);
-		
-		//Display current date and time on JDialog, with timer
-		
-		JLabel today = new JLabel(now);
-		today.setFont(new Font("Monospaced", Font.PLAIN, 32));
-		today.setBounds(29, 11, 392, 78);
-		layeredPane.add(today);
 		
 		TextArea delayPanel = new TextArea();
 		delayPanel.setBackground(new Color(255, 255, 255));
 		delayPanel.setFont(new Font("Monospaced", Font.BOLD, 16));
 		delayPanel.setText(fDelayed);
 		delayPanel.setEditable(false);
-		delayPanel.setBounds(960, 37, 362, 591);
+		delayPanel.setBounds(10, 612, 1317, 372);
 		layeredPane.add(delayPanel);
+		BCL.setBounds(595, 148, 30, 23);
+		layeredPane.add(BCL);
+		
+		JLabel AMS = new JLabel("AMS");
+		AMS.setFont(new Font("Tahoma", Font.BOLD, 11));
+		AMS.setBounds(630, 148, 32, 23);
+		layeredPane.add(AMS);
+		
+		
+		JLabel DUB = new JLabel("DUB");
+		DUB.setFont(new Font("Tahoma", Font.BOLD, 11));
+		DUB.setBounds(568, 148, 24, 23);
+		layeredPane.add(DUB);
+		
+		JLabel ATH = new JLabel("ATH");
+		ATH.setFont(new Font("Tahoma", Font.BOLD, 11));
+		ATH.setBounds(669, 197, 28, 23);
+		layeredPane.add(ATH);
+		
+		JLabel BKK = new JLabel("BKK");
+		BKK.setFont(new Font("Tahoma", Font.BOLD, 11));
+		BKK.setBounds(909, 280, 29, 23);
+		layeredPane.add(BKK);
+		
+		JLabel CAIRO = new JLabel("CAI");
+		CAIRO.setFont(new Font("Tahoma", Font.BOLD, 11));
+		CAIRO.setBounds(695, 226, 25, 23);
+		layeredPane.add(CAIRO);
+		
+		JLabel DEL = new JLabel("DEL");
+		DEL.setFont(new Font("Tahoma", Font.BOLD, 11));
+		DEL.setBounds(832, 231, 28, 23);
+		layeredPane.add(DEL);
+		
+		JLabel DXB = new JLabel("DXB");
+		DXB.setFont(new Font("Tahoma", Font.BOLD, 11));
+		DXB.setBounds(763, 242, 29, 23);
+		layeredPane.add(DXB);
+		
+		JLabel HKG = new JLabel("HKG");
+		HKG.setFont(new Font("Tahoma", Font.BOLD, 11));
+		HKG.setBounds(949, 245, 29, 23);
+		layeredPane.add(HKG);
+		
+		JLabel JNB = new JLabel("JNB");
+		JNB.setFont(new Font("Tahoma", Font.BOLD, 11));
+		JNB.setBounds(684, 416, 29, 23);
+		layeredPane.add(JNB);
+		
+		JLabel LOS = new JLabel("LOS");
+		LOS.setFont(new Font("Tahoma", Font.BOLD, 11));
+		LOS.setBounds(612, 299, 29, 23);
+		layeredPane.add(LOS);
+		
+		JLabel LVS = new JLabel("LVS");
+		LVS.setFont(new Font("Tahoma", Font.BOLD, 11));
+		LVS.setBounds(267, 205, 27, 23);
+		layeredPane.add(LVS);
+		
+		JLabel LIS = new JLabel("LIS");
+		LIS.setFont(new Font("Tahoma", Font.BOLD, 11));
+		LIS.setBounds(566, 190, 26, 23);
+		layeredPane.add(LIS);
+		
+		JLabel MAD = new JLabel("MAD");
+		MAD.setFont(new Font("Tahoma", Font.BOLD, 11));
+		MAD.setBounds(591, 191, 31, 23);
+		layeredPane.add(MAD);
+		
+		JLabel RAK = new JLabel("RAK");
+		RAK.setFont(new Font("Tahoma", Font.BOLD, 11));
+		RAK.setBounds(575, 213, 30, 23);
+		layeredPane.add(RAK);
+		
+		JLabel MEX = new JLabel("MEX");
+		MEX.setFont(new Font("Tahoma", Font.BOLD, 11));
+		MEX.setBounds(289, 254, 30, 23);
+		layeredPane.add(MEX);
+		
+		JLabel SVO = new JLabel("SVO");
+		SVO.setFont(new Font("Tahoma", Font.BOLD, 11));
+		SVO.setBounds(694, 127, 31, 23);
+		layeredPane.add(SVO);
+		
+		JLabel JFK = new JLabel("JFK");
+		JFK.setFont(new Font("Tahoma", Font.BOLD, 11));
+		JFK.setBounds(396, 181, 29, 23);
+		layeredPane.add(JFK);
+		
+		JLabel CDG = new JLabel("CDG");
+		CDG.setFont(new Font("Tahoma", Font.BOLD, 11));
+		CDG.setBounds(612, 168, 26, 23);
+		layeredPane.add(CDG);
+		
+		JLabel FCO = new JLabel("FCO");
+		FCO.setFont(new Font("Tahoma", Font.BOLD, 11));
+		FCO.setBounds(638, 182, 29, 23);
+		layeredPane.add(FCO);
+		
+		JLabel GRU = new JLabel("GRU");
+		GRU.setFont(new Font("Tahoma", Font.BOLD, 11));
+		GRU.setBounds(451, 406, 30, 23);
+		layeredPane.add(GRU);
+		
+		JLabel ARN = new JLabel("ARN");
+		ARN.setFont(new Font("Tahoma", Font.BOLD, 11));
+		ARN.setBounds(645, 125, 30, 23);
+		layeredPane.add(ARN);
+		
+		JLabel SYD = new JLabel("SYD");
+		SYD.setFont(new Font("Tahoma", Font.BOLD, 11));
+		SYD.setBounds(1051, 437, 30, 23);
+		layeredPane.add(SYD);
+		
+		JLabel DFW = new JLabel("DFW");
+		DFW.setFont(new Font("Tahoma", Font.BOLD, 11));
+		DFW.setBounds(307, 221, 32, 23);
+		layeredPane.add(DFW);
+		
+		JLabel HND = new JLabel("HND");
+		HND.setFont(new Font("Tahoma", Font.BOLD, 11));
+		HND.setBounds(1005, 197, 31, 23);
+		layeredPane.add(HND);
+		
+		JLabel YYZ = new JLabel("YYZ");
+		YYZ.setFont(new Font("Tahoma", Font.BOLD, 11));
+		YYZ.setBounds(370, 172, 26, 23);
+		layeredPane.add(YYZ);
+		map.setIcon(new ImageIcon(img));
+		map.setBounds(186, -54, 970, 704);
+		layeredPane.add(map);
+		
+		//Display current date and time on JDialog, with timer
+		
+		JLabel today = new JLabel(now);
+		today.setFont(new Font("Monospaced", Font.PLAIN, 26));
+		today.setBounds(10, 0, 180, 39);
+		layeredPane.add(today);
 		
 		JLabel lblNewLabel = new JLabel("Delays BCL");
 		lblNewLabel.setFont(new Font("Monospaced", Font.PLAIN, 18));
-		lblNewLabel.setBounds(1089, 0, 131, 31);
+		lblNewLabel.setBounds(622, 561, 131, 31);
 		layeredPane.add(lblNewLabel);
+		
+		JLabel lblBclDepartures = new JLabel("BCL Departures");
+		lblBclDepartures.setBounds(1219, 0, 123, 39);
+		layeredPane.add(lblBclDepartures);
 		
 		frame.getContentPane().setLayout(groupLayout);
 	}
