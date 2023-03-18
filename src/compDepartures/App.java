@@ -120,6 +120,7 @@ public class App {
 			airline[i] = data.get(i)[11];
 		}
 		
+//		System.out.println(date[0]+" "+depTime[0]+" "+arrTime[0]+" "+duration[0]+" "+miles[0]+" "+delay[0]+" "+dAp[0]+" "+dCt[0]+" "+aAp[0]+" "+aCt[0]+" "+flightNo[0]+" "+airline[0]);
 		
 //		Create ArrayLists for individual city buttons with separate delay and on time
 //		-----------------------------------------------------------------------------------------------------------------------------------
@@ -142,7 +143,7 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\n"+dTime+"Flight " + flightNo[i] + " from " +dCt[i]+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
 						+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
@@ -151,8 +152,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-					String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-							+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+					String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+							+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+							+"Arriving at " +aTime.plusMinutes(x)+"\n"
 									+"Airline "+airline[i]+"\n"
 							+"-----------------------------------------------");
 				bcl_delayed.add(onDelay);
@@ -193,8 +195,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				arn_delayed.add(onDelay);
@@ -235,8 +238,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				lvs_delayed.add(onDelay);
@@ -278,8 +282,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dfw_delayed.add(onDelay);
@@ -320,8 +325,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				mex_delayed.add(onDelay);
@@ -362,8 +368,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				yyz_delayed.add(onDelay);
@@ -404,8 +411,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				jfk_delayed.add(onDelay);
@@ -446,8 +454,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dub_delayed.add(onDelay);
@@ -488,8 +497,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				ams_delayed.add(onDelay);
@@ -530,8 +540,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				lis_delayed.add(onDelay);
@@ -572,8 +583,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				rak_delayed.add(onDelay);
@@ -614,8 +626,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				mad_delayed.add(onDelay);
@@ -656,8 +669,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				fco_delayed.add(onDelay);
@@ -698,8 +712,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				cdg_delayed.add(onDelay);
@@ -740,8 +755,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				ath_delayed.add(onDelay);
@@ -782,8 +798,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dxb_delayed.add(onDelay);
@@ -824,8 +841,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				del_delayed.add(onDelay);
@@ -866,8 +884,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				hkg_delayed.add(onDelay);
@@ -908,8 +927,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				hnd_delayed.add(onDelay);
@@ -950,8 +970,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				svo_delayed.add(onDelay);
@@ -992,8 +1013,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				cai_delayed.add(onDelay);
@@ -1034,8 +1056,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				los_delayed.add(onDelay);
@@ -1076,8 +1099,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				bkk_delayed.add(onDelay);
@@ -1118,8 +1142,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				gru_delayed.add(onDelay);
@@ -1160,8 +1185,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				jnb_delayed.add(onDelay);
@@ -1202,8 +1228,9 @@ public class App {
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
-						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+" ("+dAp[i]+")\n"
+						+"Arrival to "+aCt[i]+" ("+aAp[i]+") at "+ aTime+" delayed by "+x+" minutes"+"\n"
+						+"Arriving at " +aTime.plusMinutes(x)+"\n"
 								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				syd_delayed.add(onDelay);
