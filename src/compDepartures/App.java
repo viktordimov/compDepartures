@@ -1244,7 +1244,7 @@ public class App {
 		sidePanel.setText("");
 		sidePanel.setFont(new Font("Monospaced", Font.BOLD, 16));
 		sidePanel.setEditable(false);
-		sidePanel.setBackground(Color.WHITE);
+		sidePanel.setBackground(Color.LIGHT_GRAY);
 		sidePanel.setBounds(969, 87, 497, 846);
 		layeredPane.add(sidePanel);
 		// BCL departures and delays as default data
