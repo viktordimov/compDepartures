@@ -123,7 +123,7 @@ public class App {
 		
 //		Create ArrayLists for individual city buttons with separate delay and on time
 //		-----------------------------------------------------------------------------------------------------------------------------------
-//		BCL - unlike template
+//		BCL - candidate template
 		ArrayList<String> bcl = new ArrayList<String>();
 		ArrayList<String> bcl_delayed = new ArrayList<String>();
 		
@@ -142,17 +142,20 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String bclDepartures = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+"Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+						+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
-				bcl.add(bclDepartures);
+				bcl.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String bclDelayed = ("Flight "+flightNo[i]+" to "+aCt[i]+" at "+dTime+" delayed to "+dTime.plusMinutes(x)+"\n"
-						+"-----------------------------------------------");
-				bcl_delayed.add(bclDelayed);
+					String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
+							+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+									+"Airline "+airline[i]+"\n"
+							+"-----------------------------------------------");
+				bcl_delayed.add(onDelay);
 				}
 					
 			}	
@@ -162,7 +165,7 @@ public class App {
 		String sorted_bcl = String.join("\n",  bcl);
 		String sorted_bcl_delayed = String.join("\n", bcl_delayed);
 //		-----------------------------------------------------------------------------------------------------------------------------------
-//		ARN - template
+//		ARN 
 		ArrayList<String> arn = new ArrayList<String>();
 		ArrayList<String> arn_delayed = new ArrayList<String>();
 		
@@ -181,16 +184,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				arn.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				arn_delayed.add(onDelay);
 				}
@@ -221,16 +226,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				lvs.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				lvs_delayed.add(onDelay);
 				}
@@ -262,16 +269,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dfw.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dfw_delayed.add(onDelay);
 				}
@@ -302,16 +311,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				mex.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				mex_delayed.add(onDelay);
 				}
@@ -342,16 +353,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				yyz.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				yyz_delayed.add(onDelay);
 				}
@@ -382,16 +395,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				jfk.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				jfk_delayed.add(onDelay);
 				}
@@ -422,16 +437,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dub.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dub_delayed.add(onDelay);
 				}
@@ -462,16 +479,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				ams.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				ams_delayed.add(onDelay);
 				}
@@ -502,16 +521,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				lis.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				lis_delayed.add(onDelay);
 				}
@@ -542,16 +563,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				rak.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				rak_delayed.add(onDelay);
 				}
@@ -582,16 +605,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				mad.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				mad_delayed.add(onDelay);
 				}
@@ -622,16 +647,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				fco.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				fco_delayed.add(onDelay);
 				}
@@ -662,16 +689,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				cdg.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				cdg_delayed.add(onDelay);
 				}
@@ -702,16 +731,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				ath.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				ath_delayed.add(onDelay);
 				}
@@ -742,16 +773,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dxb.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				dxb_delayed.add(onDelay);
 				}
@@ -782,16 +815,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				del.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				del_delayed.add(onDelay);
 				}
@@ -822,16 +857,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				hkg.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				hkg_delayed.add(onDelay);
 				}
@@ -862,16 +899,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				hnd.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				hnd_delayed.add(onDelay);
 				}
@@ -902,16 +941,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				svo.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				svo_delayed.add(onDelay);
 				}
@@ -942,16 +983,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				cai.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				cai_delayed.add(onDelay);
 				}
@@ -982,16 +1025,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				los.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				los_delayed.add(onDelay);
 				}
@@ -1022,16 +1067,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				bkk.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				bkk_delayed.add(onDelay);
 				}
@@ -1062,16 +1109,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				gru.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				gru_delayed.add(onDelay);
 				}
@@ -1102,16 +1151,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				jnb.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				jnb_delayed.add(onDelay);
 				}
@@ -1142,16 +1193,18 @@ public class App {
 				LocalTime aTime = LocalTime.parse(arrTime[i].toString(), t);
 				
 				if (dTime.plusMinutes(x).isBefore(dTime.plusMinutes(30))) {
-				String onTime = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onTime = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" on time\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				syd.add(onTime);
 				}
 				
 				if (dTime.plusMinutes(x).isAfter(dTime.plusMinutes(30))) {
 				
-				String onDelay = ("\nFlight " + flightNo[i] + " from " +dCt[i]+ " at " +dTime+"\n"
+				String onDelay = ("\n"+dTime+" Flight " + flightNo[i] + " from " +dCt[i]+"\n"
 						+"Arriving to "+aCt[i]+" at "+ aTime+" delayed\n"
+								+"Airline "+airline[i]+"\n"
 						+"-----------------------------------------------");
 				syd_delayed.add(onDelay);
 				}
@@ -1194,14 +1247,18 @@ public class App {
 		sidePanel.setBackground(Color.WHITE);
 		sidePanel.setBounds(969, 87, 497, 846);
 		layeredPane.add(sidePanel);
-		// BCL delays at the bottom panel
+		// BCL departures and delays as default data
 		TextArea delayPanel = new TextArea();
 		delayPanel.setBounds(10, 586, 947, 347);
 		delayPanel.setBackground(Color.LIGHT_GRAY);
 		delayPanel.setFont(new Font("Monospaced", Font.BOLD, 16));
-		delayPanel.setText(sorted_bcl_delayed);
+		sidePanel.setText("Departures from BCL\n"+sorted_bcl+"\n");
+		delayPanel.setText("Delayed flights from BCL\n"+sorted_bcl_delayed);
 		delayPanel.setEditable(false);
+		sidePanel.setCaretPosition (1);
+		delayPanel.setCaretPosition (1);
 		layeredPane.add(delayPanel);
+		
 
 		// Introduce data inside sidePanel on-click	
 		JLabel BCL = new JLabel("BCL");
@@ -1211,7 +1268,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from BCL\n"+sorted_bcl+"\n\nDelayed flights from BCL\ncan be found on the bottom left of the screen");
+				sidePanel.setText("Departures from BCL\n"+sorted_bcl+"\n");
+				delayPanel.setText("Delayed flights from BCL\n"+sorted_bcl_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1223,7 +1283,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from AMS\n"+sorted_ams+"\n\nDelayed flights from AMS\n"+sorted_ams_delayed);
+				sidePanel.setText("Departures from AMS\n"+sorted_ams+"\n");
+				delayPanel.setText("Delayed flights from AMS\n"+sorted_ams_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1235,7 +1298,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from DUB\n"+sorted_dub+"\n\nDelayed flights from DUB\n"+sorted_dub_delayed);
+				sidePanel.setText("Departures from DUB\n"+sorted_dub+"\n");
+				delayPanel.setText("Delayed flights from DUB\n"+sorted_dub_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1247,7 +1313,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from ATH\n"+sorted_ath+"\n\nDelayed flights from ATH\n"+sorted_ath_delayed);
+				sidePanel.setText("Departures from ATH\n"+sorted_ath+"\n");
+				delayPanel.setText("Delayed flights from ATH\n"+sorted_ath_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1259,7 +1328,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from BKK\n"+sorted_bkk+"\n\nDelayed flights from BKK\n"+sorted_bkk_delayed);
+				sidePanel.setText("Departures from BKK\n"+sorted_bkk+"\n");
+				delayPanel.setText("Delayed flights from BKK\n"+sorted_bkk_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1271,7 +1343,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from CAI\n"+sorted_cai+"\n\nDelayed flights from CAI\n"+sorted_cai_delayed);
+				sidePanel.setText("Departures from CAI\n"+sorted_cai+"\n");
+				delayPanel.setText("Delayed flights from CAI\n"+sorted_cai_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1283,7 +1358,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from DEL\n"+sorted_del+"\n\nDelayed flights from DEL\n"+sorted_del_delayed);
+				sidePanel.setText("Departures from DEL\n"+sorted_del+"\n");
+				delayPanel.setText("Delayed flights from DEL\n"+sorted_del_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1295,7 +1373,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from DXB\n"+sorted_dxb+"\n\nDelayed flights from DXB\n"+sorted_dxb_delayed);
+				sidePanel.setText("Departures from DXB\n"+sorted_dxb+"\n");
+				delayPanel.setText("Delayed flights from DXB\n"+sorted_dxb_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1307,7 +1388,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from HKG\n"+sorted_hkg+"\n\nDelayed flights from HKG\n"+sorted_hkg_delayed);
+				sidePanel.setText("Departures from HKG\n"+sorted_hkg+"\n");
+				delayPanel.setText("Delayed flights from HKG\n"+sorted_hkg_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1319,7 +1403,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from JNB\n"+sorted_jnb+"\n\nDelayed flights from JNB\n"+sorted_jnb_delayed);
+				sidePanel.setText("Departures from JNB\n"+sorted_jnb+"\n");
+				delayPanel.setText("Delayed flights from JNB\n"+sorted_jnb_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1331,7 +1418,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from LOS\n"+sorted_los+"\n\nDelayed flights from LOS\n"+sorted_los_delayed);
+				sidePanel.setText("Departures from LOS\n"+sorted_los+"\n");
+				delayPanel.setText("Delayed flights from LOS\n"+sorted_los_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1343,7 +1433,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from LVS\n"+sorted_lvs+"\n\nDelayed flights from LVS\n"+sorted_lvs_delayed);
+				sidePanel.setText("Departures from LVS\n"+sorted_lvs+"\n");
+				delayPanel.setText("Delayed flights from LVS\n"+sorted_lvs_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1355,7 +1448,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from LIS\n"+sorted_lis+"\n\nDelayed flights from LIS\n"+sorted_lis_delayed);
+				sidePanel.setText("Departures from LIS\n"+sorted_lis+"\n");
+				delayPanel.setText("Delayed flights from LIS\n"+sorted_lis_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1367,7 +1463,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from MAD\n"+sorted_mad+"\n\nDelayed flights from MAD\n"+sorted_mad_delayed);
+				sidePanel.setText("Departures from MAD\n"+sorted_mad+"\n");
+				delayPanel.setText("Delayed flights from MAD\n"+sorted_mad_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1379,7 +1478,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from RAK\n"+sorted_rak+"\n\nDelayed flights from RAK\n"+sorted_rak_delayed);
+				sidePanel.setText("Departures from RAK\n"+sorted_rak+"\n");
+				delayPanel.setText("Delayed flights from RAK\n"+sorted_rak_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1391,7 +1493,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from MEX\n"+sorted_mex+"\n\nDelayed flights from MEX\n"+sorted_mex_delayed);
+				sidePanel.setText("Departures from MEX\n"+sorted_mex+"\n");
+				delayPanel.setText("Delayed flights from MEX\n"+sorted_mex_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1403,7 +1508,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from SVO\n"+sorted_svo+"\n\nDelayed flights from SVO\n"+sorted_svo_delayed);
+				sidePanel.setText("Departures from SVO\n"+sorted_svo+"\n");
+				delayPanel.setText("Delayed flights from SVO\n"+sorted_svo_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1415,7 +1523,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from JFK\n"+sorted_jfk+"\n\nDelayed flights from JFK\n"+sorted_jfk_delayed);
+				sidePanel.setText("Departures from JFK\n"+sorted_jfk+"\n");
+				delayPanel.setText("Delayed flights from JFK\n"+sorted_jfk_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1427,7 +1538,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from CDG\n"+sorted_cdg+"\n\nDelayed flights from CDG\n"+sorted_cdg_delayed);
+				sidePanel.setText("Departures from CDG\n"+sorted_cdg+"\n");
+				delayPanel.setText("Delayed flights from CDG\n"+sorted_cdg_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1439,7 +1553,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from FCO\n"+sorted_fco+"\n\nDelayed flights from FCO\n"+sorted_fco_delayed);
+				sidePanel.setText("Departures from FCO\n"+sorted_fco+"\n");
+				delayPanel.setText("Delayed flights from FCO\n"+sorted_fco_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1451,7 +1568,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from GRU\n"+sorted_gru+"\n\nDelayed flights from GRU\n"+sorted_gru_delayed);
+				sidePanel.setText("Departures from GRU\n"+sorted_gru+"\n");
+				delayPanel.setText("Delayed flights from GRU\n"+sorted_gru_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1463,7 +1583,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from ARN\n"+sorted_arn+"\n\nDelayed flights from ARN\n"+sorted_arn_delayed);
+				sidePanel.setText("Departures from ARN\n"+sorted_arn+"\n");
+				delayPanel.setText("Delayed flights from ARN\n"+sorted_arn_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1475,7 +1598,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from SYD\n"+sorted_syd+"\n\nDelayed flights from SYD\n"+sorted_syd_delayed);
+				sidePanel.setText("Departures from SYD\n"+sorted_syd+"\n");
+				delayPanel.setText("Delayed flights from SYD\n"+sorted_syd_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1487,7 +1613,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from DFW\n"+sorted_dfw+"\n\nDelayed flights from DFW\n"+sorted_dfw_delayed);
+				sidePanel.setText("Departures from DFW\n"+sorted_dfw+"\n");
+				delayPanel.setText("Delayed flights from DFW\n"+sorted_dfw_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1499,7 +1628,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from HND\n"+sorted_hnd+"\n\nDelayed flights from HND\n"+sorted_hnd_delayed);
+				sidePanel.setText("Departures from HND\n"+sorted_hnd+"\n");
+				delayPanel.setText("Delayed flights from HND\n"+sorted_hnd_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1511,7 +1643,10 @@ public class App {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				sidePanel.setBackground(Color.LIGHT_GRAY);
-				sidePanel.setText("Departures from YYZ\n"+sorted_yyz+"\n\nDelayed flights from YYZ\n"+sorted_yyz_delayed);
+				sidePanel.setText("Departures from YYZ\n"+sorted_yyz+"\n");
+				delayPanel.setText("Delayed flights from YYZ\n"+sorted_yyz_delayed);
+				delayPanel.setCaretPosition (1);
+				sidePanel.setCaretPosition (1);
 				
 			}
 		});
@@ -1521,7 +1656,7 @@ public class App {
 		today.setBounds(12, 12, 168, 39);
 		today.setFont(new Font("Monospaced", Font.PLAIN, 26));
 		
-		JLabel lblNewLabel = new JLabel("BCL Departure delays");
+		JLabel lblNewLabel = new JLabel("Delayed departures");
 		lblNewLabel.setBounds(10, 559, 234, 31);
 		lblNewLabel.setFont(new Font("Monospaced", Font.PLAIN, 18));
 		layeredPane.setLayout(null);
